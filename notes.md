@@ -88,16 +88,31 @@ fruit = "apple"
 // or define at the same time 
 var fruit string = "apple"
 
-// you can also skip the types
+// you can also skip the types with implicit typing
 var fruit = "apple"
 
 // or use := shorthand assigment which infers type and skips var
 fruit := "apple"
-```
+// that's called the "expression assignment operator" or "walrus operator"
+
+``
+If a variable is declared, it MUST be used otherwise it's an error and the program won't compile
 
 ## Data Types 
 the three basic types for numbers are integers (int), floats (float) and strings (str). Also complex (complex) numbers that are imaginary numbers. Which is neat
 - the ints can be signed (negative and positive) or unsigned (positive only)
-- there's a cool table picture
+- there's a cool table picture with all the different int types
+- there's only float32 and float64
 
+# General Notes 
+## Find the type of a variable 
 
+```go
+func main() {
+
+  number := 2
+  fmt.Printf("%T", number) 
+  // the Printf allow us to see what Go guessed, but all ints are just int, 
+  // all floats are float64
+}
+```
